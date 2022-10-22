@@ -1,0 +1,8 @@
+<div>
+  Hello world
+  <ul>
+  {{#each @model as |photo|}}
+    <li><img src={{photo.download_url}} alt={{photo.author}} width="100" height="100"/></li>
+  {{/each}}
+  </ul>
+</div>
