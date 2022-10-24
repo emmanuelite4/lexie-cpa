@@ -23,21 +23,18 @@ export default class CartService extends Service {
   add(id, url, size) {
     let items = { ...this.items };
     items[id] = {
-      ...this.items[id],
+      ...items[id],
       [size]: {
         url: url,
         amount: this.price.items[size],
-        count:
-          this.items[id] && this.items[id][size]
-            ? this.items[id][size].count + 1
-            : 1,
+        count: items[id] && items[id][size] ? items[id][size].count + 1 : 1,
       },
     };
     this.items = items;
   }
 
   delete(id, size) {
-    let items = this.items;
+    let items = { ...this.items };
     let itemCount = items[id][size].count;
     if (itemCount > 1) {
       items[id][size].count = itemCount - 1;
