@@ -1,3 +1,17 @@
-body{
-    padding:20px;
+.photo-card {
+  padding: 20px;
+
+}
+
+.photo-card:hover {
+  background-color: rgb(248, 249, 250);
+  cursor: pointer
+}
+
+.pagination-container {
+  display: flex;
+  align-content: center;
+  justify-content: flex-end;
+  padding: 20px;
+  gap: 10px;
 }

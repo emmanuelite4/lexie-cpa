@@ -1,14 +1,16 @@
 import Route from '@ember/routing/route';
 
 export default class IndexRoute extends Route {
-  async model() {
-    try{
-    let response = await fetch('https://picsum.photos/v2/list');
-    let parsed = await response.json();
+  queryParams = {
+    page: {
+      refreshModel: true,
+    },
+  };
 
-    return parsed;
-    } catch(e){
-        console.error(e)
-    }
+  async model(params) {
+    let response = await fetch(
+      `http://jsonplaceholder.typicode.com/photos?_start=${params.page}&_limit=25`
+    );
+    return await response.json();
   }
 }
