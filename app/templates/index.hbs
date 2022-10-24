@@ -7,8 +7,9 @@
   <div class="container mt-4">
     <div class="row">
       {{#each @model as |photo|}}
-        <PhotoCard src={{photo.download_url}} alt={{photo.author}} />
-      {{/each}} 
+        <PhotoCard src={{photo.url}} alt={{photo.author}} />
+      {{/each}}
     </div>
+    <Pagination @onClickNext={{this.handleNextPage}} @onClickPrev={{this.handlePrevPage}} @currentPage={{this.page}}/>
   </div>
 </div>
