@@ -1,9 +1,10 @@
 import Route from '@ember/routing/route';
-import ENV from 'lexie-cpa/config/environment';
+import { service } from '@ember/service';
 
 export default class PhotoRoute extends Route {
+  @service request;
+
   async model(params) {
-    let response = await fetch(`${ENV.API_ENDPOINT}id/${params.photo_id}/info`);
-    return await response.json();
+    return await this.request.getData(`id/${params.photo_id}/info`);
   }
 }

@@ -19,7 +19,9 @@
       <td>{{cart.amount}}</td>
       <td>{{cart.count}}</td>
       <td>
-        <button class="btn btn-outline-danger" {{on 'click' (fn this.removeFromCart cart.id cart.size) }}>-</button>
+        <button type="button" class="btn btn-outline-danger" {{on 'click' (fn this.removeFromCart cart.id cart.size) }}>
+          -
+        </button>
       </td>
     </tr>
   {{/each}}

@@ -1,7 +1,8 @@
 import Route from '@ember/routing/route';
-import ENV from 'lexie-cpa/config/environment';
+import { service } from '@ember/service';
 
 export default class IndexRoute extends Route {
+  @service request;
   queryParams = {
     page: {
       refreshModel: true,
@@ -9,9 +10,6 @@ export default class IndexRoute extends Route {
   };
 
   async model(params) {
-    let response = await fetch(
-      `${ENV.API_ENDPOINT}v2/list?page=${params.page}&limit=25`
-    );
-    return await response.json();
+    return await this.request.getData(`v2/list?page=${params.page}&limit=25`);
   }
 }
