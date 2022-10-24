@@ -1,20 +1,20 @@
-<CartSizeButton @count={{this.smallCount}} @onAddToCart={{fn this.addToCart @id 'small'}} @onRemoveFromCart={{fn
+<CartSizeButton @count={{this.smallCount}} @onAddToCart={{fn this.addToCart @id @url 'small'}} @onRemoveFromCart={{fn
   this.removeFromCart @id 'small'}}>
   ${{this.price.items.small}} Small
 </CartSizeButton>
 
-<CartSizeButton @count={{this.mediumCount}} @onAddToCart={{fn this.addToCart @id 'medium'}} @onRemoveFromCart={{fn
+<CartSizeButton @count={{this.mediumCount}} @onAddToCart={{fn this.addToCart @id @url 'medium'}} @onRemoveFromCart={{fn
   this.removeFromCart @id
   'medium'}}>
   ${{this.price.items.medium}}  Medium
 </CartSizeButton>
 
-<CartSizeButton @count={{this.largeCount}} @onAddToCart={{fn this.addToCart @id 'large'}} @onRemoveFromCart={{fn
+<CartSizeButton @count={{this.largeCount}} @onAddToCart={{fn this.addToCart @id @url 'large'}} @onRemoveFromCart={{fn
   this.removeFromCart @id 'large'}}>
   ${{this.price.items.large}} Large
 </CartSizeButton>
 
-<CartSizeButton @count={{this.xLargeCount}} @onAddToCart={{fn this.addToCart @id 'xLarge'}} @onRemoveFromCart={{fn
+<CartSizeButton @count={{this.xLargeCount}} @onAddToCart={{fn this.addToCart @id @url 'xLarge'}} @onRemoveFromCart={{fn
   this.removeFromCart @id
   'xLarge'}}>
   ${{this.price.items.xLarge}} X-Large

@@ -1,0 +1,28 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Image</th>
+    <th scope="col">Size</th>
+    <th scope="col">Amount</th>
+    <th scope="col">Count</th>
+    <th scope="col">Remove</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{#each this.carts as |cart|}}
+    <tr>
+      <th scope="row">{{cart.id}}</th>
+      <td><img src={{cart.url}} width="40" height="40"
+               alt={{cart.url}}></td>
+      <td>{{cart.size}}</td>
+      <td>{{cart.amount}}</td>
+      <td>{{cart.count}}</td>
+      <td>
+        <button class="btn btn-outline-danger" {{on 'click' (fn this.removeFromCart cart.id cart.size) }}>-</button>
+      </td>
+    </tr>
+  {{/each}}
+
+  </tbody>
+</table>

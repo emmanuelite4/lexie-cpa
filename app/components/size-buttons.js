@@ -21,8 +21,8 @@ export default class SizeButtons extends Component {
     return this.cart.items[this.args.id]?.xLarge?.count || 0;
   }
 
-  addToCart = (id, size) => {
-    this.cart.add(id, size);
+  addToCart = (id, url, size) => {
+    this.cart.add(id, url, size);
   };
 
   removeFromCart = (id, size) => {

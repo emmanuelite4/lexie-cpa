@@ -20,11 +20,12 @@ export default class CartService extends Service {
     return { amount, count };
   }
 
-  add(id, size) {
+  add(id, url, size) {
     let items = { ...this.items };
     items[id] = {
       ...this.items[id],
       [size]: {
+        url: url,
         amount: this.price.items[size],
         count:
           this.items[id] && this.items[id][size]
