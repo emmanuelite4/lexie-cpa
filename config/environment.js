@@ -43,5 +43,7 @@ module.exports = function (environment) {
     // here you can enable a production-specific feature
   }
 
+  ENV.API_ENDPOINT = 'https://picsum.photos/';
+
   return ENV;
 };

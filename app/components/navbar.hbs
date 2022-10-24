@@ -1,0 +1,9 @@
+<nav class="navbar bg-light navbar-expand-lg">
+  <div class="container-fluid">
+    <LinkTo @route="index" class="navbar-brand">MyPhotoShop</LinkTo>
+    <div class="d-flex">
+      <span>Cart <strong>{{this.cart.total.count}}</strong></span>
+      <span class="ms-2">Total <strong>{{this.cart.total.amount}}</strong></span>
+    </div>
+  </div>
+</nav>

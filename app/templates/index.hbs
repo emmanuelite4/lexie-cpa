@@ -1,15 +1,7 @@
-<div>
-  <nav class="navbar bg-light">
-    <div class="container-fluid">
-      <LinkTo @route="index" class="navbar-brand">MyPhotoShop</LinkTo>
-    </div>
-  </nav>
-  <div class="container mt-4">
-    <div class="row">
-      {{#each @model as |photo|}}
-        <PhotoCard src={{photo.url}} alt={{photo.author}} />
-      {{/each}}
-    </div>
-    <Pagination @onClickNext={{this.handleNextPage}} @onClickPrev={{this.handlePrevPage}} @currentPage={{this.page}}/>
-  </div>
+<div class="row">
+  {{#each @model as |photo|}}
+    <PhotoCard src={{photo.download_url}} alt={{photo.author}} @photo={{photo}} />
+  {{/each}}
 </div>
+<Pagination @onClickNext={{this.handleNextPage}} @onClickPrev={{this.handlePrevPage}} @currentPage={{this.page}}/>
+

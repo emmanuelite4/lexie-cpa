@@ -1,0 +1,18 @@
+{{page-title "Photo"}}
+
+<div>
+  <img src={{@model.download_url}} alt={{@model.author}} class="photo-detail" />
+  <p class="mt-2"><strong>Author:</strong> {{@model.author}}</p>
+
+  <div>
+    <p><strong>Resolutions</strong></p>
+    <div class="mb-4">
+      <SizeButtons @id={{@model.id}} />
+    </div>
+  </div>
+
+  <div>
+    <h4>Add to Cart</h4>
+
+  </div>
+</div>
