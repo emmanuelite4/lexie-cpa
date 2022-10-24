@@ -25,7 +25,7 @@ module('Acceptance | index', function (hooks) {
 
     await click('[data-testid="next-button"]');
 
-    assert.strictEqual(currentURL(), '/?page=1');
+    assert.strictEqual(currentURL(), '/?page=2');
 
     assert.dom('[data-testid="prev-button"]').isEnabled();
 
