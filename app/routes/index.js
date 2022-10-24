@@ -1,4 +1,5 @@
 import Route from '@ember/routing/route';
+import ENV from 'lexie-cpa/config/environment';
 
 export default class IndexRoute extends Route {
   queryParams = {
@@ -9,7 +10,7 @@ export default class IndexRoute extends Route {
 
   async model(params) {
     let response = await fetch(
-      `http://jsonplaceholder.typicode.com/photos?_start=${params.page}&_limit=25`
+      `${ENV.API_ENDPOINT}v2/list?page=${params.page}&limit=25`
     );
     return await response.json();
   }

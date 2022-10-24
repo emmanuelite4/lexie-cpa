@@ -1,5 +1,5 @@
 <div class="pagination-container">
-  <button type="button" data-testid="prev-button" class="btn btn-secondary" disabled={{if (lt @currentPage 1)
+  <button type="button" data-testid="prev-button" class="btn btn-secondary" disabled={{if (lt @currentPage 2)
                                                                                           true}} {{on
     'click'
     @onClickPrev }}>{{"<< Prev page"}}</button>
